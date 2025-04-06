@@ -1,58 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Práctica Bootstrap & Validaciones</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
-  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./constants.js" defer></script>
+    <script src="./crearUsuario.js" defer></script>
   </head>
 
-
   <body>
+    <!-- NAVBAR -->
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Crear usuario</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Vista Usuarios</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Crear usuario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./vistausuario.html">Vista Usuarios</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    
-      <form class="row g-3">
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="inputAddress">
-          </div>
-        
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-          </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword4">
-          </div>
-        
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Repetir contraseña</label>
-          <input type="text" class="form-control" id="inputAddress2">
-        </div>
-       
-          </div>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-      </form>
-    
+      </div>
+    </nav>
+
+    <!-- FIN DEL NAVBAR -->
+
+    <!-- FORMULARIO -->
+
+    <form id="holeForm" class="row g-3">
+      <div class="col-12">
+        <!-- NOMBRE -->
+        <label for="inputAddress" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" required />
+      </div>
+
+      <div class="col-md-6">
+        <!-- CORREO -->
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+
+      <div class="col-md-6">
+        <!-- CONTRASEÑA -->
+        <label for="inputPassword4" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" required />
+      </div>
+
+      <div class="col-12">
+        <!-- REPITE CONTRASEÑA -->
+        <label for="inputAddress2" class="form-label">Repetir contraseña</label>
+        <input type="password" class="form-control" id="password2" required />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Crear usuario</button>
+        <!-- BOTÓN -->
+      </div>
+      <div id="messageDiv" hidden></div>
+    </form>
+
+    <!-- FIN DEL FORMULARIO -->
   </body>
 </html>
